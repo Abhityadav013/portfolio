@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   ChevronDown,
+  Code,
+  Github,
   Linkedin,
   Mail,
   MapPin,
@@ -106,6 +108,28 @@ const HeroSection = () => {
           >
             <Linkedin className="w-5 h-5" />
             <span>LinkedIn</span>
+          </motion.a>
+           <motion.a
+            href="https://github.com/Abhityadav013"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-black-600 to-white-700 text-white rounded-xl hover:white-800 transition-all shadow-lg shadow-blue-500/25"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Github className="w-5 h-5" />
+            <span>Github</span>
+          </motion.a>
+           <motion.a
+            href="https://leetcode.com/__abhityadav"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-black-600 to-white-700 text-white rounded-xl hover:white-800 transition-all shadow-lg shadow-blue-500/25"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Code className="w-5 h-5" />
+            <span>Leetcode</span>
           </motion.a>
           <motion.button
             onClick={() => scrollToSection("contact")}
