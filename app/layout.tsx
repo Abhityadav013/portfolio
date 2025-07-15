@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Abhit Yadav – Portfolio",
     description: "Portfolio of Abhit Yadav – Full-Stack Developer. Projects, skills, experience, and contact information.",
-    url: "https://your-portfolio-url.com/",
+    url: "https://www.codewithabhit.com/",
     siteName: "Abhit Yadav Portfolio",
     images: [
       {
-        url: "/favicon.ico",
+        url: "/logo.png",
         width: 64,
         height: 64,
         alt: "Abhit Yadav Portfolio Logo"
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Abhit Yadav – Portfolio",
     description: "Portfolio of Abhit Yadav – Full-Stack Developer. Projects, skills, experience, and contact information.",
-    images: ["/favicon.ico"]
+    images: ["/logo.png"]
   }
 };
 
