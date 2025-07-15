@@ -7,7 +7,6 @@ import {
   MapPin,
   Phone,
   Sparkles,
-  User,
 } from "lucide-react";
 import AnimatedText from "./AnimatedText";
 import { useNavigationSections } from "../hooks/useNavigationSections";
@@ -17,7 +16,7 @@ const HeroSection = () => {
   return (
     <section
       id="home"
-      className="min-h-screen top-20 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
+      className="min-h-screen top-10 flex items-center justify-center px-4 sm:px-6 lg:px-8 relative"
     >
       <div className="max-w-6xl mx-auto text-center relative z-10">
         <motion.div
@@ -26,7 +25,7 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, type: "spring" }}
         >
-          <div className="w-40 h-40 mx-auto mb-8 relative">
+          {/* <div className="w-40 h-40 mx-auto mb-8 relative">
             <motion.div
               className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full"
               animate={{
@@ -41,7 +40,7 @@ const HeroSection = () => {
             <div className="absolute inset-2 bg-slate-900 rounded-full flex items-center justify-center">
               <User className="w-16 h-16 text-blue-400" />
             </div>
-          </div>
+          </div> */}
 
           <AnimatedText
             text="Abhit Yadav"

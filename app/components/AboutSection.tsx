@@ -77,8 +77,8 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold text-white mb-6">Tech Stack Highlights</h3>
               <div className="space-y-6">
                 {[
-                  { category: "Backend", techs: ['Node.js', 'NestJS', '.NET Core', 'Express'], color: "blue" },
-                  { category: "Frontend", techs: ['React', 'Redux', 'TypeScript', 'MUI', 'Ant Design'], color: "green" },
+                  { category: "Backend", techs: ['Node.js', 'NestJS', '.NET Core', 'Express', 'Rest API', 'GraphQL'], color: "blue" },
+                  { category: "Frontend", techs: ['React', 'Nextjs', 'Redux', 'TypeScript', 'MUI', 'Ant Design'], color: "green" },
                   { category: "Cloud & DevOps", techs: ['Docker', 'AWS', 'CI/CD', 'Redis'], color: "purple" }
                 ].map((stack, index) => (
                   <motion.div
