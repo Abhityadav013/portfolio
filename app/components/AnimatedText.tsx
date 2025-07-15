@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 
 interface AnimatedTextProps {
   text: string;
@@ -10,7 +10,7 @@ interface AnimatedTextProps {
 export default function AnimatedText({ text, className = '', delay = 0 }: AnimatedTextProps) {
   const words = text.split(' ');
 
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
@@ -18,7 +18,7 @@ export default function AnimatedText({ text, className = '', delay = 0 }: Animat
     }),
   };
 
-  const child = {
+  const child: Variants = {
     visible: {
       opacity: 1,
       y: 0,
