@@ -7,7 +7,7 @@ import { CheckCircle, ExternalLink } from 'lucide-react';
     {
       title: 'IndianTadka.eu',
       subtitle: 'German Client Project',
-      description: 'Complete online food ordering and table reservation platform with client interface and admin dashboard for order management.',
+      description: 'A complete online food ordering and table reservation platform with a client interface and an admin dashboard for order management — currently under active development.',
       technologies: ['Next.js 15', 'TailwindCSS', 'MUI', 'Node.js', 'TypeScript'],
       link: 'https://indiantadka.eu/',
       flag: '🇩🇪',
