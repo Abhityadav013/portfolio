@@ -53,10 +53,11 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1, duration: 0.8 }}
-            className="flex items-center justify-center space-x-2 text-xl md:text-2xl text-blue-400 mb-6"
+            className="flex flex-wrap items-center justify-center gap-2 text-xl md:text-2xl text-blue-400 mb-6"
           >
             <Sparkles className="w-6 h-6" />
-            <span>Full-Stack Developer</span>
+            <span>Senior Full-Stack / Backend-Focused Software Engineer</span>
+            <span className="text-gray-400">(Node.js, AWS)</span>
             <Sparkles className="w-6 h-6" />
           </motion.div>
 
@@ -66,10 +67,28 @@ const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.8 }}
           >
-            3+ years of experience building scalable web applications for
-            healthcare, pharmacy, and e-commerce industries. Transforming ideas
-            into powerful digital solutions with cutting-edge technology.
+            4+ years of experience delivering scalable, cloud-native platforms
+            across healthcare, pharmacy, and restaurant POS commerce. I build
+            reliable backend systems, API-first services, and modern web apps
+            with a focus on performance and resiliency.
           </motion.p>
+          <motion.div
+            className="flex flex-wrap justify-center gap-2 text-sm text-gray-300 mb-10"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.35, duration: 0.6 }}
+          >
+            {["Node.js", "AWS", "NestJS", "React", "TypeScript", "Microservices"].map(
+              (stack) => (
+                <span
+                  key={stack}
+                  className="px-3 py-1 rounded-full bg-white/5 border border-white/10"
+                >
+                  {stack}
+                </span>
+              )
+            )}
+          </motion.div>
         </motion.div>
 
         <motion.div

@@ -1,13 +1,14 @@
 import React from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Briefcase, Code, GraduationCap, Mail, Menu, User, X } from "lucide-react";
+import { Briefcase, Code, Cpu, GraduationCap, Mail, Menu, User, X } from "lucide-react";
 import { useNavigationSections } from "../hooks/useNavigationSections";
 
 const navItems = [
   { id: "home", label: "Home", icon: User },
   { id: "about", label: "About", icon: User },
+  { id: "experience", label: "Experience", icon: Briefcase },
   { id: "projects", label: "Projects", icon: Code },
-  { id: "skills", label: "Skills", icon: Briefcase },
+  { id: "skills", label: "Skills", icon: Cpu },
   { id: "education", label: "Education", icon: GraduationCap },
   { id: "contact", label: "Contact", icon: Mail },
 ];
@@ -47,29 +48,42 @@ const NavigationSection = () => {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.id}
-                onClick={() => {
-                  const element = document.getElementById(item.id);
-                  if (element) element.scrollIntoView({ behavior: "smooth" });
-                }}
-                className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
-                  activeSection === item.id
-                    ? "text-blue-400 bg-blue-500/20 shadow-lg shadow-blue-500/25"
-                    : "text-gray-300 hover:text-blue-400 hover:bg-white/5"
-                }`}
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
-                <item.icon className="w-4 h-4" />
-                <span>{item.label}</span>
-              </motion.button>
-            ))}
+          <div className="hidden md:flex items-center flex-1">
+            <div className="flex items-center justify-center flex-1 space-x-6">
+              {navItems.map((item, index) => (
+                <motion.button
+                  key={item.id}
+                  onClick={() => {
+                    const element = document.getElementById(item.id);
+                    if (element) element.scrollIntoView({ behavior: "smooth" });
+                  }}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-xl transition-all duration-300 ${
+                    activeSection === item.id
+                      ? "text-blue-400 bg-blue-500/20 shadow-lg shadow-blue-500/25"
+                      : "text-gray-300 hover:text-blue-400 hover:bg-white/5"
+                  }`}
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <item.icon className="w-4 h-4" />
+                  <span>{item.label}</span>
+                </motion.button>
+              ))}
+            </div>
+            <motion.button
+              onClick={() => {
+                const element = document.getElementById("contact");
+                if (element) element.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center space-x-2 px-4 py-2 rounded-xl border border-blue-500/40 text-blue-300 hover:bg-blue-500/10 transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span>Let&apos;s Talk</span>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -128,6 +142,19 @@ const NavigationSection = () => {
                     <span>{item.label}</span>
                   </motion.button>
                 ))}
+                <motion.button
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    setPendingScrollSection("contact");
+                  }}
+                  className="w-full flex items-center justify-center px-4 py-4 rounded-lg text-lg text-blue-300 border border-blue-500/40 hover:bg-blue-500/10 transition-all duration-200"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1 }}
+                  whileHover={{ x: 10 }}
+                >
+                  Let&apos;s Talk
+                </motion.button>
               </div>
             </motion.div>
           )}

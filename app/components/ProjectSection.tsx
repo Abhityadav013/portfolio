@@ -6,33 +6,12 @@ import { CheckCircle, ExternalLink } from 'lucide-react';
  const projects = [
     {
       title: 'IndianTadka.eu',
-      subtitle: 'German Client Project',
-      description: 'A complete online food ordering and table reservation platform with a client interface and an admin dashboard for order management — currently under active development.',
+      subtitle: 'Freelance Project (Germany)',
+      description: 'Online food ordering and table reservation platform with client-facing UX and an admin dashboard for order management.',
       technologies: ['Next.js 15', 'TailwindCSS', 'MUI', 'Node.js', 'TypeScript'],
       link: 'https://indiantadka.eu/',
       flag: '🇩🇪',
       status: 'Live'
-    },
-    {
-      title: 'Informed (Libera)',
-      subtitle: 'Vocational Rehab Platform',
-      description: 'Reduced API response time to &lt;20ms for 80,000+ users using MongoDB & Redis. Implemented monorepo (Nx) setup and DocuSign automation.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Redis', 'Nx', 'DocuSign'],
-      achievements: ['80,000+ users', '<20ms response time', 'Monorepo architecture']
-    },
-    {
-      title: 'MicroProduct (OptumRx)',
-      subtitle: 'Healthcare Components',
-      description: 'Developed reusable React components with 95% test coverage and built a shared frontend library for cross-project development.',
-      technologies: ['React', 'Jest', 'Cucumber', 'TypeScript', 'Component Library'],
-      achievements: ['95% test coverage', 'Reusable components', 'Shared library']
-    },
-    {
-      title: 'MyArthritisRx & IndigoRx',
-      subtitle: 'Healthcare Platform',
-      description: 'Migrated from Sitecore to modern stack with AI-based coaching plans, user registration, and Stripe payment integration.',
-      technologies: ['ASP.NET Core', 'React', 'Redux', 'Saga', 'Stripe', 'AI Integration'],
-      achievements: ['Full migration', 'AI coaching', 'Payment integration']
     }
   ];
 export const ProjectSection = () => {

@@ -1,82 +1,40 @@
-'use client';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Sphere, Text, Billboard } from '@react-three/drei';
-import * as THREE from 'three';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 
-const skills = [
-  'JavaScript', 'TypeScript', 'Python', 'SQL', 'C#',
-  'React', 'Redux', 'MUI', 'Ant Design', 'TailwindCSS', 'Next.js',
-  'Node.js', 'NestJS', '.NET Core', 'Express', 'RESTful APIs',
-  'MongoDB', 'Redis', 'SQL Server', 'PostgreSQL',
-  'Docker', 'AWS (S3/EC2)', 'CI/CD', 'Bitbucket Pipelines', 'TeamCity', 'Octopus',
-  'JIRA', 'Postman', 'Splunk', 'Selenium', 'Jest', 'Cucumber'
+const skillGroups = [
+  {
+    title: 'Backend & Architecture',
+    skills: [
+      'Node.js', 'NestJS', 'Express', 'Microservices',
+      'Event-Driven Systems', 'API-First Design', 'Serverless'
+    ],
+  },
+  {
+    title: 'Cloud & DevOps',
+    skills: [
+      'AWS Lambda', 'SQS', 'SNS', 'S3', 'EC2', 'CloudWatch',
+      'Docker', 'CI/CD', 'Infrastructure Automation'
+    ],
+  },
+  {
+    title: 'Frontend',
+    skills: ['React', 'Next.js', 'Redux', 'MUI', 'Ant Design'],
+  },
+  {
+    title: 'Databases & Caching',
+    skills: ['MongoDB', 'PostgreSQL', 'SQL Server', 'Redis'],
+  },
+  {
+    title: 'Modern & Trending',
+    skills: [
+      'Monorepo (Nx)', 'Observability & Logging', 'Elasticsearch',
+      'AI-Assisted Development', 'Testing Automation'
+    ],
+  },
+  {
+    title: 'Tooling & Delivery',
+    skills: ['Git', 'GitHub', 'Bitbucket', 'Jira', 'Postman', 'Selenium'],
+  },
 ];
-
-function getSpherePositions(count: number, radius: number) {
-  const positions: [number, number, number][] = [];
-  const goldenAngle = Math.PI * (3 - Math.sqrt(5));
-  for (let i = 0; i < count; i++) {
-    const y = 1 - (i / (count - 1)) * 2;
-    const radiusAtY = Math.sqrt(1 - y * y);
-    const theta = goldenAngle * i;
-    const x = Math.cos(theta) * radiusAtY;
-    const z = Math.sin(theta) * radiusAtY;
-    positions.push([x * radius, y * radius, z * radius]);
-  }
-  return positions;
-}
-
-function SkillsSphere() {
-  const groupRef = useRef<THREE.Group>(null);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  useFrame(() => {
-    if (groupRef.current) {
-      groupRef.current.rotation.y += 0.003;
-    }
-  });
-  const positions = getSpherePositions(skills.length, 7.5);
-  return (
-    <group ref={groupRef}>
-      {positions.map(([x, y, z], i) => {
-        const isHovered = hoveredIndex === i;
-        return (
-          <group key={skills[i]} position={[x, y, z]}>
-            <Sphere
-              args={[isHovered ? 0.9 : 0.6, 32, 32]}
-              onPointerOver={() => setHoveredIndex(i)}
-              onPointerOut={() => setHoveredIndex(null)}
-              scale={isHovered ? 1.2 : 1}
-            >
-              <meshStandardMaterial
-                color={new THREE.Color(`hsl(${(i * 30) % 360}, 80%, 60%)`)}
-                transparent
-                opacity={isHovered ? 0.7 : 0.45}
-                depthWrite={false}
-              />
-            </Sphere>
-            <Billboard>
-              <Text
-                position={[0, 0, isHovered ? 1.2 : 0.8]}
-                fontSize={isHovered ? 0.38 : 0.28}
-                color="#fff"
-                anchorX="center"
-                anchorY="middle"
-                outlineColor="#000"
-                outlineWidth={0.01}
-                renderOrder={isHovered ? 1 : 0}
-                onPointerOver={() => setHoveredIndex(i)}
-                onPointerOut={() => setHoveredIndex(null)}
-              >
-                {skills[i]}
-              </Text>
-            </Billboard>
-          </group>
-        );
-      })}
-    </group>
-  );
-}
 
 export const SkillSection = () => {
   return (
@@ -85,15 +43,33 @@ export const SkillSection = () => {
         <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-8 text-center">
           Technical Skills
         </h2>
-        <div className="w-full h-[700px] bg-transparent rounded-2xl">
-          <Canvas camera={{ position: [0, 0, 18], fov: 60 }}>
-            <ambientLight intensity={0.7} />
-            <directionalLight position={[10, 10, 5]} intensity={1} />
-            <SkillsSphere />
-            <OrbitControls enablePan={false} enableZoom={true} />
-          </Canvas>
+        <p className="text-center text-gray-300 max-w-3xl mx-auto mb-12">
+          Backend-focused engineering with modern cloud practices, scalable architecture,
+          and a delivery mindset optimized for product velocity.
+        </p>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {skillGroups.map((group) => (
+            <div
+              key={group.title}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 backdrop-blur-sm hover:bg-white/10 transition-all duration-300"
+            >
+              <h3 className="text-lg font-semibold text-white mb-4">
+                {group.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {group.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="px-3 py-1 text-sm rounded-full bg-blue-500/15 text-blue-200 border border-blue-500/20"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}; 
+};

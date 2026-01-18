@@ -29,8 +29,8 @@ const AboutSection = () => {
               viewport={{ once: true }}
             >
               <p className="text-lg text-gray-300 leading-relaxed">
-                Full-Stack Developer with 3+ years of experience specializing in scalable and high-performance web applications. 
-                I have extensive experience building solutions for healthcare, pharmacy, and e-commerce industries.
+                Backend-focused Full-Stack Engineer with 4+ years of experience delivering scalable, high-performance web applications.
+                I have extensive experience building solutions for healthcare, pharmacy, and commerce platforms.
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
                 Currently pursuing a Master&apos;s in Computer Systems from Riga Technical University and open to job opportunities across Europe.
@@ -77,9 +77,9 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold text-white mb-6">Tech Stack Highlights</h3>
               <div className="space-y-6">
                 {[
-                  { category: "Backend", techs: ['Node.js', 'NestJS', '.NET Core', 'Express', 'Rest API', 'GraphQL'], color: "blue" },
-                  { category: "Frontend", techs: ['React', 'Nextjs', 'Redux', 'TypeScript', 'MUI', 'Ant Design'], color: "green" },
-                  { category: "Cloud & DevOps", techs: ['Docker', 'AWS', 'CI/CD', 'Redis'], color: "purple" }
+                  { category: "Backend", techs: ['Node.js', 'NestJS', 'Express', 'Microservices', 'Serverless'], color: "blue" },
+                  { category: "Frontend", techs: ['React', 'Next.js', 'Redux', 'MUI', 'Ant Design'], color: "green" },
+                  { category: "Cloud & DevOps", techs: ['AWS', 'SQS/SNS', 'Docker', 'CI/CD', 'Redis'], color: "purple" }
                 ].map((stack, index) => (
                   <motion.div
                     key={stack.category}

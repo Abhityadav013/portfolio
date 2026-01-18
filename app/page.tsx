@@ -1,6 +1,7 @@
 "use client";
 import ContactSection from "./components/ContactSection";
 import EducationSection from "./components/EducationSection";
+import ExperienceSection from "./components/ExperienceSection";
 import { FooterSection } from "./components/FooterSection";
 import ParticleBackground from "./components/ParticleBackground";
 import { SkillSection } from "./components/SkillSection";
@@ -32,6 +33,7 @@ export default function Home() {
       <NavigationSection />
       <HeroSection />
       <AboutSection />
+      <ExperienceSection />
       <ProjectSection />
       <SkillSection />
       <EducationSection />

@@ -1,6 +1,6 @@
 # Abhit Yadav – Portfolio
 
-A modern, interactive portfolio website for Abhit Yadav, a Full-Stack Developer with 3+ years of experience. The site showcases professional experience, featured projects, technical skills, education, and contact information, with a visually engaging UI built using Next.js, React, Framer Motion, and Three.js.
+A modern, interactive portfolio website for Abhit Yadav, a backend-focused Full-Stack Engineer with 4+ years of experience. The site showcases professional experience, featured projects, technical skills, education, and contact information, with a visually engaging UI built using Next.js, React, Framer Motion, and Three.js.
 
 ## Features
 - Animated hero section with personal intro and contact links

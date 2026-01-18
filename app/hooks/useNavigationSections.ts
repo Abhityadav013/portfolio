@@ -10,6 +10,7 @@ export function useNavigationSections() {
       const sections = [
         "home",
         "about",
+        "experience",
         "projects",
         "skills",
         "education",
