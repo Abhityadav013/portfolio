@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from "framer-motion";
 import FloatingCard from './FloatingCard';
-import { CheckCircle, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 
  const projects = [
     {
@@ -79,26 +79,6 @@ export const ProjectSection = () => {
                     </div>
                   </div>
 
-                  {project.achievements && (
-                    <div>
-                      <h4 className="font-semibold text-white mb-3">Key Achievements</h4>
-                      <ul className="space-y-2">
-                        {project.achievements.map((achievement, i) => (
-                          <motion.li
-                            key={i}
-                            className="flex items-center text-sm text-gray-300"
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: i * 0.1, duration: 0.4 }}
-                            viewport={{ once: true }}
-                          >
-                            <CheckCircle className="w-4 h-4 text-green-400 mr-2 flex-shrink-0" />
-                            {achievement}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
                 </div>
               </FloatingCard>
             ))}
